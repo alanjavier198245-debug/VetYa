@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VetYa - Veterinario a Domicilio 60min | Ita, Itaugua, Capiata</title>
+<style>
+:root{--green:#10B981;--dark:#0F172A;--light:#F8FAFC}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,system-ui,sans-serif;background:var(--light);color:var(--dark)}
+.header{position:fixed;top:0;left:0;right:0;background:#ffffffee;backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:14px 6%;z-index:100;border-bottom:1px solid #E2E8F0}
+.logo{font-weight:800;font-size:24px}.logo span{color:var(--green)}.btn{padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;display:inline-flex;gap:6px;border:none;cursor:pointer}
+.btn-green{background:var(--green);color:white}.btn-dark{background:var(--dark);color:white}
+.hero{padding:120px 6% 60px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;max-width:1300px;margin:auto}
+.hero h1{font-size:52px;line-height:1;font-weight:800;letter-spacing:-1px}.hero h1 em{color:var(--green);font-style:normal}
+.form-card{background:white;border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.08);border:1px solid #E2E8F0}
+.form-card input,.form-card select,.form-card textarea{width:100%;padding:14px;margin-top:10px;border-radius:10px;border:1px solid #CBD5E1;font-size:15px}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.hero h1{font-size:36px}}
+</style></head>
+<body>
+<header class="header"><div class="logo">🐾 Vet<span>Ya</span></div><div><a href="https://wa.me/595994161276" class="btn btn-green">WhatsApp 0994 161 276</a></div></header>
+<section class="hero">
+<div><div style="background:#DCFCE7;color:#166534;padding:6px 12px;border-radius:999px;display:inline-block;font-size:13px;font-weight:700">🟢 3 vets activos en Ita</div>
+<h1>Veterinario a domicilio en <em>60 minutos.</em></h1><p style="color:#475569;margin:16px 0 24px;font-size:18px">Ita, Itaugua, Capiata, San Lorenzo. Urgencias, vacunas, consultas. Paga cuando llega el vet.</p>
+<a href="#reservar" class="btn btn-green" style="padding:16px 28px;font-size:17px">📍 Pedir veterinario ahora</a>
+</div>
+<div class="form-card" id="reservar"><h3>Solicita un veterinario</h3><small>Respuesta en 3 min por WhatsApp</small>
+<input id="nombre" placeholder="Tu nombre"><input id="tel" placeholder="Tu WhatsApp"><select id="tipo"><option>Perro</option><option>Gato</option><option>Otro</option></select>
+<select id="servicio"><option>Urgencia AHORA (60 min)</option><option>Vacuna a domicilio</option><option>Consulta general</option></select>
+<textarea id="sintoma" rows="3" placeholder="Que le pasa?"></textarea><input id="direccion" placeholder="Barrio y direccion">
+<button class="btn btn-green" style="width:100%;margin-top:14px;justify-content:center" onclick="enviar()">Enviar por WhatsApp →</button></div>
+</section>
+<script>
+function enviar(){const n=document.getElementById('nombre').value||'Cliente';const t=document.getElementById('tel').value;const tipo=document.getElementById('tipo').value;const serv=document.getElementById('servicio').value;const sin=document.getElementById('sintoma').value;const dir=document.getElementById('direccion').value;if(!dir||!sin){alert('Completa direccion y sintoma');return}const msg=`🚨 NUEVO PEDIDO VETYA %0A%0ANombre: ${n}%0ATel: ${t}%0AMascota: ${tipo}%0AServicio: ${serv}%0ASintoma: ${sin}%0ADireccion: ${dir}`;window.open(`https://wa.me/595994161276?text=${msg}`,'_blank');}
+</script>
+</body></html>
